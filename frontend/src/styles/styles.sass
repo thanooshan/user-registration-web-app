@@ -1,0 +1,47 @@
+%flex-center-between
+    display: flex 
+    align-items: center
+    justify-content: space-between    
+    
+.container
+    max-width: 1170px
+    padding: 0 15px
+    margin: 0 auto
+
+nav 
+    padding: 20px
+    box-shadow: 0px 1px 3px 0px rgba(#000, .1)
+
+    > .container
+        @extend %flex-center-between
+
+    h2 
+        margin: 0
+
+    a 
+        color: #000
+        margin: 0
+
+.form-wrapper,
+.table-wrapper
+    margin: 0 auto
+    padding: 50px 0
+
+.form-wrapper
+    max-width: 400px
+
+    h2 
+        margin-bottom: 50px
+        text-align: center
+
+.table-wrapper
+    @media (max-width: 580px)
+        .ant-table-wrapper
+            overflow: auto
+
+.title-container
+    @extend %flex-center-between
+    margin-bottom: 50px
+
+    h2 
+        margin: 0        
