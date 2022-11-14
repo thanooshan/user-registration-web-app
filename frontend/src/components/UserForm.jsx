@@ -1,15 +1,21 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useAuthContext } from '../hooks/useAuthContext';
 import { Form, Input, Button, Select, DatePicker } from 'antd';
 import moment from 'moment';
 
 export default function UserForm(props) {
-	const { title, form, onSubmit, dateFormat, password, data } =
+	const { user } = useAuthContext();
+	const { title, form, onSubmit, dateFormat, data, buttonText } =
 		props;
+	const [isModerator, setIsModerator] = useState(false);
+	const moderatorStyles = isModerator ? { display: 'none' } : {};
 
 	useEffect(() => {
 		const fieldData = { ...data };
 		fieldData.dob = moment(fieldData.dob);
 		form.setFieldsValue(fieldData);
+
+		user.role === 'moderator' && setIsModerator(true);
 	}, [data]);
 
 	return (
@@ -98,7 +104,7 @@ export default function UserForm(props) {
 							message: 'Please enter the password',
 						},
 					]}
-					style={!password && { display: 'none' }}
+					style={moderatorStyles}
 				>
 					<Input.Password />
 				</Form.Item>
@@ -126,7 +132,7 @@ export default function UserForm(props) {
 							},
 						}),
 					]}
-					style={!password && { display: 'none' }}
+					style={moderatorStyles}
 				>
 					<Input.Password />
 				</Form.Item>
@@ -136,10 +142,10 @@ export default function UserForm(props) {
 					name="role"
 					rules={[
 						{
-							required: true,
 							message: 'Please select a user role',
 						},
 					]}
+					style={moderatorStyles}
 				>
 					<Select placeholder="Select the user role">
 						<Select.Option value="admin">
@@ -152,7 +158,7 @@ export default function UserForm(props) {
 				</Form.Item>
 				<Form.Item>
 					<Button type="primary" htmlType="submit">
-						Create
+						{buttonText}
 					</Button>
 				</Form.Item>
 			</Form>

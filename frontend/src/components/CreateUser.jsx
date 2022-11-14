@@ -59,6 +59,7 @@ export default function CreateUser() {
 			form={form}
 			onSubmit={onSubmit}
 			dateFormat={dateFormat}
+			buttonText="Create"
 		/>
 	);
 }

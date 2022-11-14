@@ -76,7 +76,7 @@ export default function UpdateUser() {
 			onSubmit={onSubmit}
 			dateFormat={dateFormat}
 			data={userData}
-			password={false}
+			buttonText="Update"
 		/>
 	);
 }
