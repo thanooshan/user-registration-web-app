@@ -17,11 +17,10 @@
 # Features
 
 1. Admin can do followings
-   1.1. Create users
-   1.2. Edit users
-   1.3. Delete users
-2. Moderator can **ONLY** update his/her details
-   2.1. Moderator can't access **unauthorized** pages.
+2. Admin can create/edit/delete users
+3. Admin can change user roles
+4. Moderator can **ONLY** update his/her details
+5. Moderator can't access **unauthorized** pages.
 
 # Validation
 
