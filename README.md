@@ -3,7 +3,7 @@
 1.  Clone the project
 2.  Goto **Frontend** and run `npm install`
 3.  Goto **Backend**
-3.1. Create a `.env` file and add the env variables (Details are mailed)
+3.1. Create a `.env` file and add the env variables (Details will be provide on request)
 3.2. Run `npm install`
 3.3. Then run `npm start`
 4.  Goto **Frontend** and run `npm start`. That's it.
